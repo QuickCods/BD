@@ -1,0 +1,45 @@
+A - certo
+B - certo
+C - certo
+D - certo
+E - certo
+F - certo
+G - certo
+H - certo
+I - certo
+J - certo
+
+/* Perguntas */
+
+A - Use uma instrução SELECT para obter todos os atributos (*) de filmes com ano inferior ou igual a 1990 e duração superior a 120 minutos, por ordem alfabética do título.
+B - Use uma instrução SELECT para obter (1) o nome de cada departamento e (2) o nome do gestor ("manager") correspondente, por ordem alfabética do nome do departamento.
+C - Use uma instrução DELETE para remover todos os registos de "streaming" de filmes no mês de Fevereiro de 2018 e que tenham associado um valor cobrado inferior a 6.
+D - Use uma instrução SELECT para obter (1) os títulos de filmes e (2) e o nº de "streams" feitos por clientes correspondentes a cada filme, ordenados de forma decrescente pelo nº de "streams" e alfabeticamente por título (para filmes com o mesmo nº de "streams").
+E - Use uma instrução SELECT para obter (1) os nomes de actores com participações em 15 ou mais filmes e (2) e o total de participações em causa para cada actor, ordenados alfabeticamente pelo nome de actores.
+F - Use uma instrução SELECT para obter (1) 20 títulos de filmes categorizados no genéro "Action" (2) e respectivo valor obtido (a soma de valores cobrados) por "streams" de clientes desses filmes, ordenados primeiro de forma decrescente pelos valores cobrados e depois de forma alfabética para títulos de filmes (para valores cobrados iguais).
+    Por outras palavras, está em causa obter os títulos dos 20 filmes do genéro "Action" que geraram mais receitas e o valor das respectivas receitas.
+G - Use uma instrução DELETE para remover todos os registos de participação de actores em filmes (em MOVIE_ACTOR) para actores cujo nome começe por 'Tom' (por exemplo Tom Hanks).
+H - Use uma instrução UPDATE para adicionar 1.5 ao valor cobrado por "streams" associados a filmes com duração igual ou superior a 180 minutos e a clientes oriundos da região com nome 'Europe'.
+I -  Use uma instrução SELECT para obter os seguintes dados por cada região geográfica e para cada genéro de filme: (1) o nome da região, (2) o "label" do genéro do filme, (3) soma dos valores cobrados em "streams" feitos por clientes da região para o género de filme, e (4) soma do tempo de "streaming" por clientes da região para o género de filme tendo em conta a duração dos filmes. Os resultados devem estar ordenados alfabeticamente pelo nome da região primeiro, e depois pelo "label" do género do filme.
+J -  Defina uma "stored function" chamada validateCustomer que toma como parâmetro um identificador de cliente customerId e devolve uma "string" de acordo com a seguinte lógica:
+
+     1. se customerId não corresponder a um cliente existente na BD, o valor de retorno deverá ser 'DOES NOT EXIST';
+     2. se customerId corresponder a um cliente com estado inactivo (valor FALSE para o atributo CUSTOMER.Active de tipo BOOLEAN) mas com algum "stream" feito no ano de 2018 ou posteriormente, o valor de retorno deverá ser 'ACTIVATE';
+     3. se customerId corresponder a um cliente com estado activo (valor TRUE para o atributo CUSTOMER.Active de tipo BOOLEAN) mas sem nenhum "stream" feito em 2018 ou anos posteriores, o valor de retorno deverá ser 'DEACTIVATE';
+     4. se não se verificar nenhum dos casos anteriores, o valor de retorno deverá ser 'OK'.
+
+    Use a seguinte estrutura para o seu código:
+
+    DROP FUNCTION IF EXISTS validateCustomer;
+    DELIMITER $
+
+    CREATE FUNCTION validateCustomer(customer_id INT)
+    RETURNS TEXT
+    BEGIN
+      DECLARE result TEXT;
+
+      ... a completar ...
+
+      RETURN result;
+    END$
+    DELIMITER ;
