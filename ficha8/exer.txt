@@ -1,0 +1,62 @@
+1.1
+T1
+bfr = B/R = 4096/32 = 128
+nº nao usados = (B - bfr * R) = 0
+
+T2
+bfr = 4096/130 = 31
+nº não usado = 66
+
+1.2
+T1
+n = N / bfr = 79
+log2(n) = log (n) / log (2) = 7
+
+T2
+n = 3226
+log10(n) / log10(2) = 12
+
+divisões sucessivas por dois por estar ordenado
+e por isso 2^x = n => x = log2(n)
+
+
+2
+T1
+n = 100
+Ri = 4 + 8 = 12 bytes
+bfri = 4096/12 = 341
+T2
+n = 10000
+Ri = 12 + 8 = 20 bytes
+bfri = 4096/20 = 204
+
+2.1 - quantos blocos são necessários para armazenar os índice
+T1 - ni = 1 (100 < 341)
+T2 - ni = 50 (10000/204 = 50)
+
+2.2 - quantos acessos a blocos de disco são no máximo necessários para localizar registos da tabela usando o índice
+T1 - 2
+T2 - log2(50) = 6 + 1 = 7
+
+2.3 - quantos acessos em comparação seriam no máximo necessários sem o índice
+T1 - 100
+T2 - 10000
+
+
+3
+N = 25000
+n = 400
+Ri = 16 bytes
+bfri = 4096/16 = 256
+
+3.1
+ni = 25000/256 = 98
+
+3.2
+log2(98) = 7 + 1 = 8
+
+3.3
+n = 400
+
+
+4

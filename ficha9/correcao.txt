@@ -1,0 +1,38 @@
+1NF - tofod os atributos são indivisíveis
+    - ñ atributos compostos
+    - ñ atributos multi-valor
+
+2NF - está na 1NF
+    - ñ posso ter k(chave parcial) C(contido) PK(chave principal)
+    tal que k -> ANC (atributo não chave)
+
+3NF - PK -> X -> Y, (X e Y atributos nao chave)
+
+(1) caderno
+
+(2) 1. IdEvento -> {NomeEvento, Data, Hora, IdSala}
+       IdSala -> {NomeSala, Lugares}
+       PK = {IdEvento}
+
+ resto no caderno
+
+ (3) 1. ISBN -> {Título, Estante}
+        NumUtente -> NomeUtente
+        {ISBN, NumCópia, NumUtente, Requisição} -> Entrega
+        PK = {ISBN, NumCópia, NumUtente, Requisição}
+
+     2. Não é 2NF pois uma chave parcial (ISBN) está
+     a definir atributos não chave
+
+     3. Também é 3NF
+
+(4) a) TAXI(Matrícula, Modelo, IdPraça, DescPraça, Dia, Turno, CartaCondutor, NomeCondutor)
+    b) caderno
+
+    2.b) TAXI
+          Matricula -> {Modelo, IdPraça}
+          IdPraça -> DescPraça
+
+         CONDUÇÂO
+          {Matricula, Dia, Turno} -> CartaCondutor
+          CartaCondutor -> NomeCondutor
